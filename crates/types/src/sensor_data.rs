@@ -25,6 +25,13 @@ pub struct Foot {
     pub rear_left: f32,
     pub rear_right: f32,
 }
+#[derive(Clone, Debug, Default, Deserialize, Serialize, SerializeHierarchy)]
+pub struct Battery {
+    pub charge: f32,
+    pub status: f32, //TODO probably enum
+    pub current: f32,
+    pub temperature: f32,
+}
 
 impl Foot {
     pub fn sum(&self) -> f32 {
@@ -65,4 +72,5 @@ pub struct SensorData {
     pub touch_sensors: TouchSensors,
     pub temperature_sensors: Joints<f32>,
     pub currents: Joints<f32>,
+    pub battery_state: Battery,
 }

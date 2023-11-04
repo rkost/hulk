@@ -72,6 +72,7 @@ impl HulaWrapper {
         let touch_sensors = state_storage.touch_sensors.into();
         let temperature_sensors = state_storage.temperature.into();
         let currents = state_storage.currents.into();
+        let battery_state = state_storage.battery.into();
 
         Ok(SensorData {
             positions,
@@ -81,6 +82,7 @@ impl HulaWrapper {
             touch_sensors,
             temperature_sensors,
             currents,
+            battery_state,
         })
     }
 
